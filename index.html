@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myDatePicker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS DatePicker</title>
+  <script>
+  document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="//cdn.jsdelivr.net/angularjs/1.4.2/angular.min.js" data-semver="1.4.2"></script>
+  <script src="//cdn.jsdelivr.net/angularjs/1.4.2/angular-animate.min.js" data-semver="1.4.2"></script>
+  <script src="//cdn.jsdelivr.net/angularjs/1.4.2/angular-sanitize.min.js" data-semver="1.4.2"></script>
+  <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.1"></script>
+  <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.3.1"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div class="bs-docs-section" ng-controller="DatepickerDemoCtrl">
+    <div class="bs-example" style="padding-bottom: 24px;" append-source>
+      <form name="datepickerForm" class="form-inline" role="form">
+        <!-- Date range example -->
+        <div class="form-group">
+          <label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i> Date range <small>(dynamic)</small></label>
+          <br>
+          <div class="form-group col-xs-6">
+            <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="From" bs-datepicker>
+          </div>
+          <div class="form-group col-xs-6">
+            <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Until" bs-datepicker>
+          </div>
+        </div>
+      </form>
+    </div>
+    <h3>PREVIEW <a  data-module-name="myDatePicker" data-content-html-url="datepicker/docs/datepicker.demo.html" data-content-js-url="datepicker/docs/datepicker.demo.js" ng-plunkr data-placement="right" bs-tooltip></a></h3>
+    <pre class="bs-example-scope">
+$scope.fromDate = {{fromDate}}; // &lt;- {{ getType('fromDate') }}
+$scope.untilDate = {{untilDate}}; // &lt;- {{ getType('untilDate') }}
+</pre>
+  </div>
+</body>
+
+</html>
